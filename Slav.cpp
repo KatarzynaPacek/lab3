@@ -1,6 +1,7 @@
 #include "Slav.h"
 #include <fstream>
 
+
 using namespace std;
 
 vector <string> Slav::names;
@@ -20,10 +21,11 @@ Slav::Slav()
 {
 	static int amountOfNames = (init(), names.size());
 	_name = names[rand() % amountOfNames];
+	gender=(GENDER)(rand()%2);
 	_id = _counter++;
 }
 
 string Slav::description()
 {
-	return string("  ") + _name + " [" + to_string(_id) + "]";
+	return string("  ") + _name + " [" + to_string(_id) + "] "+to_string((int)gender);
 }
